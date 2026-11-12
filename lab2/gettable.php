@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
-
+/*
+ЗАДАНИЕ 1, 2, 4
+*/
 /**
  * Отрисовывает таблицу умножения.
  *
@@ -11,23 +13,30 @@ declare(strict_types=1);
  */
 function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 {
+	/*
+	ЗАДАНИЕ 3
+	*/
 	static $count = 0;
 	$count++;
-	
-	echo '<table>';
+
+	// Добавил div с отступом снизу, чтобы таблицы не слипались
+	echo "<div style=\"margin-bottom: 20px;\">";
+	echo "<table>";
 	for ($i = 1; $i <= $rows; $i++) {
-		echo '<tr>';
+		echo "<tr>";
 		for ($j = 1; $j <= $cols; $j++) {
+			$value = $i * $j;
 			if ($i === 1 || $j === 1) {
-				echo '<th style="background-color: ' . $color . ';">' . ($i * $j) . '</th>';
+				echo "<th style=\"background-color: $color;\">$value</th>";
 			} else {
-				echo '<td>' . ($i * $j) . '</td>';
+				echo "<td>$value</td>";
 			}
 		}
-		echo '</tr>';
+		echo "</tr>";
 	}
-	echo '</table>';
-	
+	echo "</table>";
+	echo "</div>";
+
 	return $count;
 }
 ?>
@@ -43,28 +52,40 @@ function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 			border: 2px solid black;
 			border-collapse: collapse;
 		}
-
-		th,
-		td {
+		th, td {
 			padding: 10px;
 			border: 1px solid black;
 		}
-
-		th {
-			background-color: yellow;
-		}
 	</style>
 </head>
-<body> 
+<body>
 	<h1>Таблица умножения</h1>
 	<?php
+	/*
+	ЗАДАНИЕ 3
+	- Отрисуйте таблицу умножения вызывая функцию getTable() с различными параметрами
+	*/
+	// 1-й вызов (красная 5х6)
 	getTable(5, 6, 'red');
-	getTable(10, 10);
-	getTable(8, 10);
-	getTable(5, 5);
+
+	/*
+	ЗАДАНИЕ 5
+	- Отрисуйте таблицу умножения вызывая функцию getTable() без параметров
+	- Отрисуйте таблицу умножения вызывая функцию getTable() с одним параметром
+	- Отрисуйте таблицу умножения вызывая функцию getTable() с двумя параметрами
+	- Используя статическую переменную $count выведите общее число вызовов функции getTable()
+	*/
+	// 2-й вызов (без параметров - 10х10 желтая)
+	getTable();
+
+	// 3-й вызов (с одним параметром - 8 столбцов, 10 строк, желтая)
+	getTable(8);
+
+	// 4-й вызов (с двумя параметрами - 5 столбцов, 5 строк, желтая)
+	// Сохраняем результат 4-го вызова в переменную $total
+	$total = getTable(5, 5);
 	
-	$total = getTable();
-	echo '<p>Таблица была отрисована ' . $total . ' раз</p>';
+	echo "<p>Таблица была отрисована $total раз</p>";
 	?> 
 </body>
 </html>
