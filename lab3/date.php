@@ -2,8 +2,8 @@
 declare(strict_types=1);
 
 $now = time();
-$birthdayMonth = 5; 
-$birthdayDay = 15;
+$birthdayMonth = 2; 
+$birthdayDay = 16;
 $birthday = mktime(0, 0, 0, $birthdayMonth, $birthdayDay, (int)date('Y', $now)); 
 
 $dateInfo = getdate($now);
