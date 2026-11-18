@@ -5,7 +5,7 @@
 	<title>Главная страница</title>
 	<style>
 		body { font-family: Arial, sans-serif; margin: 20px; }
-		h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
+		h2 { border-bottom: 2px solid #333; padding-bottom: 5px; margin-top: 30px; }
 		a { text-decoration: none; color: #0056b3; }
 		a:hover { text-decoration: underline; }
 	</style>
@@ -36,11 +36,11 @@
 
 	<h2>Лабораторная работа №3</h2>
 	<ul>
-		<li><a href="lab3/index.php">Главная страница 3-й лабы (index.php)</a></li>
 		<li><a href="lab3/strings.php">Задание I. Обработка строк (strings.php)</a></li>
 		<li><a href="lab3/date.php">Задание II. Дата и время (date.php)</a></li>
 		<li><a href="lab3/constants.php">Задание III.1. Константы (constants.php)</a></li>
 		<li><a href="lab3/functions.php">Задание III.2. Функции модулей (functions.php)</a></li>
+		<li><a href="lab3/index.php"><strong>Задание IV. Макет сайта (index.php)</strong></a></li>
 	</ul>
 
 	<h2>Дополнительные файлы</h2>
