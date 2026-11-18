@@ -34,6 +34,17 @@
 		<li><a href="lab2/getmenu.php">Меню через функцию (getmenu.php)</a></li>
 	</ul>
 
+	<!-- ДОБАВЛЕННЫЙ БЛОК ДЛЯ 3 ЛАБОРАТОРНОЙ -->
+	<h2>Лабораторная работа №3</h2>
+	<ul>
+		<li><a href="lab3/index.php">Главная страница 3-й лабы (index.php)</a></li>
+		<li><a href="lab3/strings.php">Задание I. Обработка строк (strings.php)</a></li>
+		<li><a href="lab3/date.php">Задание II. Дата и время (date.php)</a></li>
+		<li><a href="lab3/constants.php">Задание III.1. Константы (constants.php)</a></li>
+		<li><a href="lab3/functions.php">Задание III.2. Функции модулей (functions.php)</a></li>
+	</ul>
+	<!-- КОНЕЦ ДОБАВЛЕННОГО БЛОКА -->
+
 	<h2>Дополнительные файлы</h2>
 	<ul>
 		<li><a href="phpinfo.php" target="_blank">Информация о PHP (phpinfo.php)</a></li>
