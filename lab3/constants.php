@@ -20,6 +20,13 @@ function printAllConstants(): void
         echo "</ul>";
     }
 }
-
-printAllConstants();
 ?>
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Константы</title></head>
+<body>
+    <h2>Все константы PHP</h2>
+    <?php printAllConstants(); ?>
+    <br><a href="index.php">← Вернуться в меню 3-й лабы</a>
+</body>
+</html>
