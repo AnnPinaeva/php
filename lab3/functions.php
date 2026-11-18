@@ -14,9 +14,8 @@ function printLoadedExtensionsFunctions(): void
 
     foreach ($extensions as $extension) {
         $functions = get_extension_funcs($extension);
-        if ($functions === false) {
-            continue;
-        }
+        if ($functions === false) continue;
+        
         echo "<h3>Модуль: " . htmlspecialchars($extension) . " (" . count($functions) . " функций)</h3>";
         echo "<ul>";
         foreach ($functions as $function) {
@@ -27,6 +26,13 @@ function printLoadedExtensionsFunctions(): void
     }
     echo "<h2>Общее количество функций: " . $totalFunctions . "</h2>";
 }
-
-printLoadedExtensionsFunctions();
 ?>
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><title>Функции модулей</title></head>
+<body>
+    <h2>Функции загруженных модулей</h2>
+    <?php printLoadedExtensionsFunctions(); ?>
+    <br><a href="index.php">← Вернуться в меню 3-й лабы</a>
+</body>
+</html>
