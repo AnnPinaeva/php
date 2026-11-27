@@ -4,14 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Главная страница</title>
 	<style>
-		body { font-family: Arial, sans-serif; margin: 20px; }
-		h2 { border-bottom: 2px solid #333; padding-bottom: 5px; margin-top: 30px; }
-		a { text-decoration: none; color: #0056b3; }
+		body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
+		h1 { text-align: center; color: #2c3e50; }
+		h2 { border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 30px; color: #3498db; }
+		ul { list-style-type: none; padding-left: 0; }
+		li { margin-bottom: 10px; background: #fff; padding: 12px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s; }
+		li:hover { transform: translateX(5px); }
+		a { text-decoration: none; color: #2980b9; font-weight: bold; }
 		a:hover { text-decoration: underline; }
+		strong { color: #e74c3c; }
 	</style>
 </head>
 <body>
-	<h1>Главная страница</h1>
+	<h1>Мои лабораторные работы по PHP</h1>
 
 	<h2>Лабораторная работа №1</h2>
 	<ul>
@@ -40,7 +45,7 @@
 		<li><a href="lab3/date.php">Задание II. Дата и время (date.php)</a></li>
 		<li><a href="lab3/constants.php">Задание III.1. Константы (constants.php)</a></li>
 		<li><a href="lab3/functions.php">Задание III.2. Функции модулей (functions.php)</a></li>
-		<li><a href="lab3/index.php"><strong>Задание IV. Макет сайта (index.php)</strong></a></li>
+		<li><a href="site/index.php"><strong>Задание IV. Макет сайта (site/index.php)</strong></a></li>
 	</ul>
 
 	<h2>Дополнительные файлы</h2>
