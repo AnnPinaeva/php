@@ -51,7 +51,6 @@
 	<h2>Дополнительные файлы</h2>
 	<ul>
 		<li><a href="phpinfo.php" target="_blank">Информация о PHP (phpinfo.php)</a></li>
-		<li><a href="logo.png" target="_blank">Слоник (logo.png)</a></li>
 	</ul>
 </body>
 </html>
