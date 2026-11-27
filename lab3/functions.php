@@ -1,38 +1,38 @@
 <?php
 declare(strict_types=1);
-
-/**
- * Выводит для каждого загруженного модуля имена всех его функций 
- * и общее количество функций в конце.
- * 
- * @return void
- */
-function printLoadedExtensionsFunctions(): void
-{
-    $extensions = get_loaded_extensions();
-    $totalFunctions = 0;
-
-    foreach ($extensions as $extension) {
-        $functions = get_extension_funcs($extension);
-        if ($functions === false) continue;
-        
-        echo "<h3>Модуль: " . htmlspecialchars($extension) . " (" . count($functions) . " функций)</h3>";
-        echo "<ul>";
-        foreach ($functions as $function) {
-            echo "<li>" . htmlspecialchars($function) . "</li>";
-            $totalFunctions++;
-        }
-        echo "</ul>";
-    }
-    echo "<h2>Общее количество функций: " . $totalFunctions . "</h2>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><title>Функции модулей</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Функции модулей</title>
+    <style>
+        h2 { color: #333; margin-top: 20px; }
+        ul { list-style-type: square; }
+    </style>
+</head>
 <body>
-    <h2>Функции загруженных модулей</h2>
-    <?php printLoadedExtensionsFunctions(); ?>
-    <br><a href="index.php">← Вернуться в меню 3-й лабы</a>
+    <h1>Функции по модулям</h1>
+    <?php
+    $extensions = get_loaded_extensions();
+    $totalCount = 0;
+
+    foreach ($extensions as $ext) {
+        $funcs = get_extension_funcs($ext);
+        
+        if ($funcs) {
+            echo "<h2>Модуль: " . htmlspecialchars($ext) . "</h2>";
+            echo "<ul>";
+            foreach ($funcs as $func) {
+                echo "<li>" . htmlspecialchars($func) . "</li>";
+                $totalCount++;
+            }
+            echo "</ul>";
+        }
+    }
+
+    echo "<hr>";
+    echo "<h3>Общее количество функций: " . $totalCount . "</h3>";
+    ?>
 </body>
 </html>
