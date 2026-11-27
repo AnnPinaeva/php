@@ -1,32 +1,42 @@
 <?php
 declare(strict_types=1);
-
-/**
- * Выводит имена и значения всех определенных в PHP констант.
- * 
- * @return void
- */
-function printAllConstants(): void
-{
-    $constants = get_defined_constants(true);
-    foreach ($constants as $category => $categoryConstants) {
-        echo "<h3>Категория: " . htmlspecialchars($category) . "</h3>";
-        echo "<ul>";
-        foreach ($categoryConstants as $name => $value) {
-            if (is_scalar($value) || is_null($value)) {
-                echo "<li><strong>" . htmlspecialchars($name) . "</strong> = " . htmlspecialchars((string)$value) . "</li>";
-            }
-        }
-        echo "</ul>";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><title>Константы</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Константы PHP</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 5px; text-align: left; }
+        th { background-color: #eee; }
+    </style>
+</head>
 <body>
-    <h2>Все константы PHP</h2>
-    <?php printAllConstants(); ?>
-    <br><a href="index.php">← Вернуться в меню 3-й лабы</a>
+    <h1>Список всех определенных констант</h1>
+    <table>
+        <tr>
+            <th>Имя константы</th>
+            <th>Значение</th>
+        </tr>
+        <?php
+        $constants = get_defined_constants(true);
+        
+        foreach ($constants as $category => $catConstants) {
+            foreach ($catConstants as $name => $value) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($name) . "</td>";
+                echo "<td>";
+                if (is_array($value)) {
+                    echo htmlspecialchars(print_r($value, true));
+                } else {
+                    echo htmlspecialchars((string)$value);
+                }
+                echo "</td>";
+                echo "</tr>";
+            }
+        }
+        ?>
+    </table>
 </body>
 </html>
